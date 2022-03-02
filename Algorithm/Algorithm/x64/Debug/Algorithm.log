@@ -1,0 +1,3 @@
+﻿  data.cpp
+D:\GitHub\algorithmStudy\AlgorithmStudy\Algorithm\Algorithm\data.cpp(10,27): warning C4552: '+': 식의 결과가 사용되지 않습니다.
+  Algorithm.vcxproj -> D:\GitHub\algorithmStudy\AlgorithmStudy\Algorithm\x64\Debug\Algorithm.exe
