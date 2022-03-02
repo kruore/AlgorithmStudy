@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Algorithm", "Algorithm\Algorithm.vcxproj", "{7D8B1C6A-5A8D-4B5E-944E-40DCE057AACE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "n번쨰까지M의 합", "Algorithm\Algorithm.vcxproj", "{7D8B1C6A-5A8D-4B5E-944E-40DCE057AACE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "진약수의합", "진약수의합\진약수의합.vcxproj", "{CF285A7F-1819-4BE1-B360-785EDEC1FF4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{7D8B1C6A-5A8D-4B5E-944E-40DCE057AACE}.Release|x64.Build.0 = Release|x64
 		{7D8B1C6A-5A8D-4B5E-944E-40DCE057AACE}.Release|x86.ActiveCfg = Release|Win32
 		{7D8B1C6A-5A8D-4B5E-944E-40DCE057AACE}.Release|x86.Build.0 = Release|Win32
+		{CF285A7F-1819-4BE1-B360-785EDEC1FF4F}.Debug|x64.ActiveCfg = Debug|x64
+		{CF285A7F-1819-4BE1-B360-785EDEC1FF4F}.Debug|x64.Build.0 = Debug|x64
+		{CF285A7F-1819-4BE1-B360-785EDEC1FF4F}.Debug|x86.ActiveCfg = Debug|Win32
+		{CF285A7F-1819-4BE1-B360-785EDEC1FF4F}.Debug|x86.Build.0 = Debug|Win32
+		{CF285A7F-1819-4BE1-B360-785EDEC1FF4F}.Release|x64.ActiveCfg = Release|x64
+		{CF285A7F-1819-4BE1-B360-785EDEC1FF4F}.Release|x64.Build.0 = Release|x64
+		{CF285A7F-1819-4BE1-B360-785EDEC1FF4F}.Release|x86.ActiveCfg = Release|Win32
+		{CF285A7F-1819-4BE1-B360-785EDEC1FF4F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,7 +5,12 @@
       "ProjectGuid": "7d8b1c6a-5a8d-4b5e-944e-40dce057aace",
       "DisplayName": "Algorithm",
       "ColorIndex": 0
+    },
+    "cf285a7f-1819-4be1-b360-785edec1ff4f": {
+      "ProjectGuid": "cf285a7f-1819-4be1-b360-785edec1ff4f",
+      "DisplayName": "진약수의합",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
