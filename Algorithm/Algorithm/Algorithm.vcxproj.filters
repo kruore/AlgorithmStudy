@@ -21,5 +21,8 @@
     <ClCompile Include="..\진약수의합\진약수의 합.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="나이차이.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
