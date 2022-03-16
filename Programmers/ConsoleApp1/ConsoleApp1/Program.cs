@@ -255,7 +255,7 @@ class Test
                         }
                     }
                 }
-                else if(sNewFileName.Contains("_Device"))
+                else if (sNewFileName.Contains("_Device"))
                 {
                     Console.WriteLine(sNewFileName);
                     string line;
@@ -287,12 +287,12 @@ class Test
                     test.WriteSteamingData_Batch_WATCH();
                     Console.WriteLine("WATCH DATA");
                 }
-                if (line.Key.Contains("AirPot"))
+                else if (line.Key.Contains("AirPot"))
                 {
                     test.WriteSteamingData_Batch_AirPot();
                     Console.WriteLine("AIRPOT DATA");
                 }
-                if (line.Key.Contains("_Device"))
+                else if (line.Key.Contains("_Device"))
                 {
                     test.WriteSteamingData_Batch_DEVICE();
                     Console.WriteLine("DEVICE DATA");
@@ -463,61 +463,66 @@ class Test
         try
         {
             isCategoryPrinted_D = false;
+
             foreach (var a in lines)
             {
-                string tempFileName = "C:\\KINLAB_DATAFIXER\\MAKENEW\\" + a.Key;
-                string str_DataCategory = null;
-                string file_Location = tempFileName;
-                string m_str_DataCategory = string.Empty;
-
-                int totalCountoftheQueue = a.Value.Count;
-
-                //Debug.Log("Saving Data Starts. Queue Count : " + totalCountoftheQueue);
-
-                using (StreamWriter streamWriter = File.AppendText(file_Location))
+                if (a.Key.Contains("_Device"))
                 {
-                    while (lines[a.Key].Count != 0)
+
+                    string tempFileName = "C:\\KINLAB_DATAFIXER\\MAKENEW\\" + a.Key;
+                    string str_DataCategory = null;
+                    string file_Location = tempFileName;
+                    string m_str_DataCategory = string.Empty;
+
+                    int totalCountoftheQueue = a.Value.Count;
+
+                    //Debug.Log("Saving Data Starts. Queue Count : " + totalCountoftheQueue);
+
+                    using (StreamWriter streamWriter = File.AppendText(file_Location))
                     {
-                        string stringData = lines[a.Key].Dequeue();
-                        if (lines[a.Key].Count == 0)
+                        while (lines[a.Key].Count != 0)
                         {
-                            string[] splitData = stringData.Split(',');
-                            /// <param name="_idx">schema 명</param>
-                            /// <param name="_datedata">날짜</param>
-                            /// <param name="_weight">무게</param>
-                            /// <param name="_count">횟수</param>
-                            /// <param name="_time">운동시간</param>
-                            /// <param name="_machineindex">머신의 index</param>
-                            /// <param name="_exerciseclass">운동종류</param>
-                            /// <param name="_mucleclass">운동에 쓰이는 근육</param>
-                        }
-                        if (stringData.Length > 0)
-                        {
-                            if (!isCategoryPrinted_D)
+                            string stringData = lines[a.Key].Dequeue();
+                            if (lines[a.Key].Count == 0)
                             {
-                                str_DataCategory =
-                               "DeviceName,"
-                               + "PTPTime,"
-                               + "UnixTime,"
-                               + "protocool,"
-                               + "CurrentDeviceTime,"
-                               + "DistanceMM,"
-                               + "DistanceCM,"
-                               + "Weight,"
-                               + "Count,"
-                               + "DistanceADC,"
-                               + "WeightADC,"
-                               + "DeviceName(Current)";
-                                streamWriter.WriteLine(str_DataCategory);
-                                isCategoryPrinted_D = true;
+                                string[] splitData = stringData.Split(',');
+                                /// <param name="_idx">schema 명</param>
+                                /// <param name="_datedata">날짜</param>
+                                /// <param name="_weight">무게</param>
+                                /// <param name="_count">횟수</param>
+                                /// <param name="_time">운동시간</param>
+                                /// <param name="_machineindex">머신의 index</param>
+                                /// <param name="_exerciseclass">운동종류</param>
+                                /// <param name="_mucleclass">운동에 쓰이는 근육</param>
                             }
-                            streamWriter.WriteLine(stringData);
+                            if (stringData.Length > 0)
+                            {
+                                if (!isCategoryPrinted_D)
+                                {
+                                    str_DataCategory =
+                                   "DeviceName,"
+                                   + "PTPTime,"
+                                   + "UnixTime,"
+                                   + "protocool,"
+                                   + "CurrentDeviceTime,"
+                                   + "DistanceMM,"
+                                   + "DistanceCM,"
+                                   + "Weight,"
+                                   + "Count,"
+                                   + "DistanceADC,"
+                                   + "WeightADC,"
+                                   + "DeviceName(Current)";
+                                    streamWriter.WriteLine(str_DataCategory);
+                                    isCategoryPrinted_D = true;
+                                }
+                                streamWriter.WriteLine(stringData);
+                            }
                         }
+                        tempb = true;
+                        isCategoryPrinted_D = false;
                     }
-                    tempb = true;
-                    isCategoryPrinted_D = false;
+                    Console.WriteLine(file_Location);
                 }
-                Console.WriteLine(file_Location);
             }
         }
 
